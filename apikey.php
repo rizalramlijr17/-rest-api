@@ -28,7 +28,7 @@
             $result[] = array(
                 'nama' => $row['nama'],
                 'nip' => $row['nip'],
-                'eamil' => $row['email']
+                'email' => $row['email']
             );
         }
         return $result;
