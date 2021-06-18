@@ -1,5 +1,5 @@
 <?php
-    include 'conn.php';
+    include 'koneksi.php';
 
     $nama = isset($_POST["nama"]) ? $_POST["nama"] : "";
     $nip = isset($_POST["nip"]) ? $_POST["nip"] : "";
@@ -7,7 +7,7 @@
 
 
     $sql = "UPDATE `dosen` SET `nama` = '".$nama."', `nip` = '".$nip."', `email` = '".$email."'
-            WHERE `news`.`id` = '".$id."'";
+            WHERE `dosen`.`id` = '".$id."'";
 
     $query = mysqli_query($conn, $sql);
     if ($query) {
@@ -15,10 +15,10 @@
     } else {
         $msg = "Data gagal diupdate!";
     }
-    $respone[] = array(
+    $respon[] = array(
         'status' => 'OK',
         'message' => $msg,
     );
-    echo json_encode($respone);
+    echo json_encode($respon);
     
 ?>
