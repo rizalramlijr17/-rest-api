@@ -7,7 +7,7 @@
         $nip = isset($_POST["nip"]) ? $_POST["nip"] : "";
         $email = isset($_POST["email"]) ? $_POST["email"] : "";
 
-        $sql = "INSERT INTO 'dosen' ('nama', 'nip', 'email')
+        $sql = "INSERT INTO `dosen` (`nama`, `nip`, `email`)
         VALUES ('".$nama."', '".$nip."', '".$email."')";
         $query = mysqli_query($conn, $sql);
         if ($query) {
@@ -15,7 +15,7 @@
         } else {
             $msg = "Data gagal disimpan!";
         }
-        $respone[] = array(
+        $respon[] = array(
             'status' => 'OK',
             'message' => $msg,
         );
@@ -31,13 +31,13 @@
             );
         }
 
-        $respone[] = array(
+        $respon[] = array(
             'status' => 'OK',
             'code' => 200,
             'data' => $result
         );
         header("Content-type: application/json");
-        echo json_encode($respone);
+        echo json_encode($respon);
     }
     
 ?>
